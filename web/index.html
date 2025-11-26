@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -27,12 +28,33 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <title>carloslangac1_2</title>
   <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyA8OEWbaOO-q20YF9Fb7akZqyUBy02arfA",
+    authDomain: "flutterprueba-3484d.firebaseapp.com",
+    projectId: "flutterprueba-3484d",
+    storageBucket: "flutterprueba-3484d.firebasestorage.app",
+    messagingSenderId: "645964152737",
+    appId: "1:645964152737:web:42021a6bb361940d0795e0"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
+
 </html>
