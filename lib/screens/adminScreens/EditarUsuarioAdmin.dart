@@ -1,3 +1,4 @@
+import 'package:carloslangac1_2/l10n/app_localizations.dart';
 import 'package:carloslangac1_2/models/User.dart';
 import 'package:carloslangac1_2/services/LogicaUsuarios.dart';
 import 'package:flutter/material.dart';
@@ -13,18 +14,19 @@ class EditarUsuarioAdmin extends StatefulWidget {
 class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
   bool _admin = false;
   void _ventanaEmergente(int index){
+    final l10n = AppLocalizations.of(context)!;
     switch(index){
       case 0:
         String? _cambioNombre;
         showDialog(context: context, builder: (context) => AlertDialog(
-          title: Text('Cambiar Nombre'),
+          title: Text(l10n.cambiar + ' ' + l10n.nombre),
           content:SingleChildScrollView(
             child: ListBody(
               children: <Widget>[
                 TextFormField(
                   decoration: InputDecoration(
                     floatingLabelBehavior: FloatingLabelBehavior.always,
-                    labelText: "Nuevo Nombre",
+                    labelText: l10n.nuevo + " " + l10n.nombre,
                     border: OutlineInputBorder()
                   ),
                   onChanged: (value){
@@ -41,14 +43,14 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     TextButton(onPressed: () => Navigator.pop(context),
-                    child: Text('Cancelar'),
+                    child: Text(l10n.cancelar),
                     ),
                     OutlinedButton(onPressed: (){
                       widget.usuario.setNombre(_cambioNombre!);
                       print(widget.usuario.getNombre());
                       Navigator.pop(context);
                     }, 
-                      child: Text('Aceptar')
+                      child: Text(l10n.aceptar)
                     )
                   ],
                 )
@@ -60,14 +62,14 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
         case 1:
           String? _cambioEdad;
           showDialog(context: context, builder: (context) => AlertDialog(
-            title: Text('Cambiar Edad'),
+            title: Text(l10n.cambiar + '' + l10n.edad),
             content:SingleChildScrollView(
               child: ListBody(
                 children: <Widget>[
                   TextFormField(
                     decoration: InputDecoration(
                       floatingLabelBehavior: FloatingLabelBehavior.always,
-                      labelText: "Nuevo Edad",
+                      labelText: l10n.nuevo + " " + l10n.edad,
                       border: OutlineInputBorder()
                     ),
                     onChanged: (value){
@@ -84,13 +86,13 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       TextButton(onPressed: () => Navigator.pop(context),
-                      child: Text('Cancelar'),
+                      child: Text(l10n.cancelar),
                       ),
                       OutlinedButton(onPressed: (){
                         widget.usuario.setEdad(int.parse(_cambioEdad!));
                         Navigator.pop(context);
                       }, 
-                        child: Text('Aceptar')
+                        child: Text(l10n.aceptar)
                       )
                     ],
                   )
@@ -102,14 +104,14 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
         case 2:
           String? _cambioPass;
           showDialog(context: context, builder: (context) => AlertDialog(
-            title: Text('Cambiar Contraseña'),
+            title: Text(l10n.cambiar + " " + l10n.contrasena),
             content:SingleChildScrollView(
               child: ListBody(
                 children: <Widget>[
                   TextFormField(
                     decoration: InputDecoration(
                       floatingLabelBehavior: FloatingLabelBehavior.always,
-                      labelText: "Nueva Contraseña",
+                      labelText: l10n.nuevo + " " + l10n.contrasena,
                       border: OutlineInputBorder()
                     ),
                     onChanged: (value){
@@ -126,13 +128,13 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       TextButton(onPressed: () => Navigator.pop(context),
-                      child: Text('Cancelar'),
+                      child: Text(l10n.cancelar),
                       ),
                       OutlinedButton(onPressed: (){
                         widget.usuario.setPasswrd(_cambioPass!);
                         Navigator.pop(context);
                       }, 
-                        child: Text('Aceptar')
+                        child: Text(l10n.aceptar)
                       )
                     ],
                   )
@@ -144,7 +146,7 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
           case 3:
             int? _cambioTrata;
             showDialog(context: context, builder: (context) => AlertDialog(
-              title: Text('Cambiar Contraseña'),
+              title: Text(l10n.cambiar + ' ' + l10n.trata),
               content:SingleChildScrollView(
                 child: ListBody(
                   children: <Widget>[
@@ -159,14 +161,14 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
                         children: <Widget>[
                           Row(
                             children: [
-                              Text('Sr.'),
+                              Text(l10n.sr),
                               Radio<int>(value: 0),
                             ],
                           ),
                           SizedBox(width: 10),
                           Row(
                             children: [
-                              Text('Sra.'),
+                              Text(l10n.sra),
                               Radio<int>(value: 2),
                             ],
                           )
@@ -179,13 +181,13 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         TextButton(onPressed: () => Navigator.pop(context),
-                        child: Text('Cancelar'),
+                        child: Text(l10n.cancelar),
                         ),
                         OutlinedButton(onPressed: (){
                           widget.usuario.setTrata(_cambioTrata!);
                           Navigator.pop(context);
                         }, 
-                          child: Text('Aceptar')
+                          child: Text(l10n.aceptar)
                         )
                       ],
                     )
@@ -197,14 +199,14 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
             case 4:
               String? _cambioNacimiento;
             showDialog(context: context, builder: (context) => AlertDialog(
-              title: Text('Cambiar Lugar de Nacimiento'),
+              title: Text(l10n.cambiar + ' ' + l10n.nacimiento),
               content:SingleChildScrollView(
                 child: ListBody(
                   children: <Widget>[
                     TextFormField(
                       decoration: InputDecoration(
                         floatingLabelBehavior: FloatingLabelBehavior.always,
-                        labelText: "Nueva Lugar de Nacimiento",
+                        labelText: l10n.nuevo + ' ' + l10n.nacimiento,
                         border: OutlineInputBorder()
                       ),
                       onChanged: (value){
@@ -221,13 +223,13 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         TextButton(onPressed: () => Navigator.pop(context),
-                        child: Text('Cancelar'),
+                        child: Text(l10n.cancelar),
                         ),
                         OutlinedButton(onPressed: (){
                           widget.usuario.setPasswrd(_cambioNacimiento!);
                           Navigator.pop(context);
                         }, 
-                          child: Text('Aceptar')
+                          child: Text(l10n.aceptar)
                         )
                       ],
                     )
@@ -241,10 +243,11 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
   }
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 167, 198, 255),
-        title: Text('Editar Usuario')
+        title: Text(l10n.editarUsuario + ' ' + l10n.usuario)
       ),
       body: Center(
         child: Column(
@@ -264,7 +267,7 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Cambiar Nombre')
+                        Text(l10n.cambiar + ' ' + l10n.nombre)
                       ],
                     ),
                 )
@@ -285,7 +288,7 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Cambiar Edad')
+                        Text(l10n.cambiar + ' ' + l10n.edad)
                       ],
                     ),
                 )
@@ -306,7 +309,7 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Cambiar Contraseña')
+                        Text(l10n.cambiar + ' ' + l10n.contrasena)
                       ],
                     ),
                 )
@@ -327,7 +330,7 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Cambiar Trata')
+                        Text(l10n.cambiar + ' ' + l10n.trata)
                       ],
                     ),
                 )
@@ -348,7 +351,7 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Cambiar Lugar de Nacimiento')
+                        Text(l10n.cambiar + ' ' + l10n.nacimiento)
                       ],
                     ),
                 )
@@ -358,7 +361,7 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Admin: '),
+                Text(l10n.admin + ': '),
                 Checkbox(value: _admin, 
                   onChanged: (bool? value){
                     setState(() {

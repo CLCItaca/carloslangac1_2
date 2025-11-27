@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:carloslangac1_2/config/utils/Validators.dart';
+import 'package:carloslangac1_2/l10n/app_localizations.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:carloslangac1_2/config/utils/Camera.dart';
@@ -37,10 +38,11 @@ class _FormularioRegistroState extends State<FormularioRegistro> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 167, 198, 255),
-        title: Text('Registros', style: TextStyle(color: Colors.black))
+        title: Text(l10n.registros, style: TextStyle(color: Colors.black))
       ),
       body: SingleChildScrollView(
         child: Form(
@@ -54,7 +56,7 @@ class _FormularioRegistroState extends State<FormularioRegistro> {
                   children: [
                     Column(
                       children: [
-                        Text('Tratamiento: ')
+                        Text(l10n.trata + ': ')
                       ]
                     ),
                     SizedBox(width: 15),
@@ -71,14 +73,14 @@ class _FormularioRegistroState extends State<FormularioRegistro> {
                             children: <Widget>[
                               Row(
                                 children: [
-                                  Text('Sr.'),
+                                  Text(l10n.sr),
                                   Radio<int>(value: 0),
                                 ],
                               ),
                               SizedBox(width: 10),
                               Row(
                                 children: [
-                                  Text('Sra.'),
+                                  Text(l10n.sra),
                                   Radio<int>(value: 2),
                                 ],
                               )
@@ -100,7 +102,7 @@ class _FormularioRegistroState extends State<FormularioRegistro> {
                         TextFormField(  
                         decoration: InputDecoration(
                           floatingLabelBehavior: FloatingLabelBehavior.always,
-                          labelText: 'Nombre',
+                          labelText: l10n.nombre,
                           border: OutlineInputBorder(),
                         ),
                         onChanged: (value) {
@@ -124,7 +126,7 @@ class _FormularioRegistroState extends State<FormularioRegistro> {
                           obscureText: true,
                           decoration: InputDecoration(
                             floatingLabelBehavior: FloatingLabelBehavior.always,
-                            labelText: 'Contraseña',
+                            labelText: l10n.contrasena,
                             border: OutlineInputBorder(),
                           ),
                           validator: (value) => Validators.validarPass(value),
@@ -147,7 +149,7 @@ class _FormularioRegistroState extends State<FormularioRegistro> {
                         obscureText: true,
                         decoration: InputDecoration(
                           floatingLabelBehavior: FloatingLabelBehavior.always,
-                          labelText: 'Introduce tu contraseña otra vez',
+                          labelText: l10n.contrasenaOtra,
                           border: OutlineInputBorder(),
                         ),
                         validator: (value) => Validators.validarPass2(_pass, value),
@@ -160,7 +162,7 @@ class _FormularioRegistroState extends State<FormularioRegistro> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Añadir imagen:'),
+                    Text(l10n.anadirImagen +': '),
                     SizedBox(width: 10),
                     Column(
                       children: [
@@ -220,7 +222,7 @@ class _FormularioRegistroState extends State<FormularioRegistro> {
                         TextFormField(
                         decoration: InputDecoration(
                           floatingLabelBehavior: FloatingLabelBehavior.always,
-                          labelText: 'Edad',
+                          labelText: l10n.edad,
                           border: OutlineInputBorder(),
                         ),
                         validator: (value) => Validators.validarEdad(int.tryParse(value!)),
@@ -241,7 +243,7 @@ class _FormularioRegistroState extends State<FormularioRegistro> {
                         TextFormField(
                         decoration: InputDecoration(
                           floatingLabelBehavior: FloatingLabelBehavior.always,
-                          labelText: 'Lugar de nacimiento',
+                          labelText: l10n.nacimiento,
                           border: OutlineInputBorder(),
                         ),
                         validator: (value) => Validators.validarNacimiento(value),
@@ -256,7 +258,7 @@ class _FormularioRegistroState extends State<FormularioRegistro> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Aceptas los términos y condiciones"),
+                    Text(l10n.terminos),
                     Checkbox(
                       value: _terminos, 
                       onChanged: (bool? value) { 
@@ -282,7 +284,7 @@ class _FormularioRegistroState extends State<FormularioRegistro> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text('Crear Usuario', style: TextStyle(color: Color.fromARGB(255, 22, 104, 255)))
+                            Text(l10n.crearUsuario, style: TextStyle(color: Color.fromARGB(255, 22, 104, 255)))
                           ],
                         )
                       ),

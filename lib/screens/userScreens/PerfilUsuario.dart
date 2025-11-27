@@ -1,3 +1,5 @@
+import 'package:carloslangac1_2/l10n/app_localizations.dart';
+import 'package:carloslangac1_2/l10n/app_localizations_en.dart';
 import 'package:flutter/material.dart';
 import 'package:carloslangac1_2/models/User.dart';
 class PerfilUsuario extends StatefulWidget {
@@ -10,27 +12,31 @@ class PerfilUsuario extends StatefulWidget {
 
 class _PerfilUsuarioState extends State<PerfilUsuario> {
   String trata(){
+    final l10n = AppLocalizations.of(context)!;
     switch (widget.usuario.getTrata()){
       case 0:
-        return "Bienvenido Sr. " + widget.usuario.getNombre();
+        return l10n.bienvenido + ' ' + l10n.sr + widget.usuario.getNombre();
       
       case 2:
-        return "Bienvenida Sra. " + widget.usuario.getNombre();
+        return l10n.bienvenido + ' ' + l10n.sra + widget.usuario.getNombre();
 
       default:
-        return "Bienvenido " + widget.usuario.getNombre();
+        return l10n.bienvenido + ' ' + widget.usuario.getNombre();
     }
   }
 
   String Edad(){
-    return "Edad: " + widget.usuario.getEdad().toString();
+    final l10n = AppLocalizations.of(context)!;
+    return l10n.edad + ": " + widget.usuario.getEdad().toString();
   }
 
   String nacimiento(){
-    return "Lugar de Nacimiento:  "+ widget.usuario.getNacimiento();
+    final l10n = AppLocalizations.of(context)!;
+    return l10n.nacimiento + ":  "+ widget.usuario.getNacimiento();
   }
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 167, 198, 255),

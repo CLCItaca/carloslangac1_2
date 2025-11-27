@@ -98,11 +98,383 @@ abstract class AppLocalizations {
     Locale('es'),
   ];
 
-  /// No description provided for @testMedium.
+  /// No description provided for @pantallaPrincipal.
   ///
   /// In es, this message translates to:
-  /// **'Prueba para Medium'**
-  String get testMedium;
+  /// **'Pantalla Principal'**
+  String get pantallaPrincipal;
+
+  /// No description provided for @usuarioBloqueado.
+  ///
+  /// In es, this message translates to:
+  /// **'Este usuario esta bloqueado'**
+  String get usuarioBloqueado;
+
+  /// No description provided for @nombre.
+  ///
+  /// In es, this message translates to:
+  /// **'Nombre'**
+  String get nombre;
+
+  /// No description provided for @contrasenaError.
+  ///
+  /// In es, this message translates to:
+  /// **'El usuario y/o contraseña son incorrectos'**
+  String get contrasenaError;
+
+  /// No description provided for @contrasena.
+  ///
+  /// In es, this message translates to:
+  /// **'Contraseña'**
+  String get contrasena;
+
+  /// No description provided for @contrasenaOtra.
+  ///
+  /// In es, this message translates to:
+  /// **'Introduce tu contraseña otra vez'**
+  String get contrasenaOtra;
+
+  /// No description provided for @iniciarSesion.
+  ///
+  /// In es, this message translates to:
+  /// **'Iniciar Sesion'**
+  String get iniciarSesion;
+
+  /// No description provided for @registrarse.
+  ///
+  /// In es, this message translates to:
+  /// **'Registrarse'**
+  String get registrarse;
+
+  /// No description provided for @inicioGoogle.
+  ///
+  /// In es, this message translates to:
+  /// **'Acceder con Google'**
+  String get inicioGoogle;
+
+  /// No description provided for @olvido.
+  ///
+  /// In es, this message translates to:
+  /// **'¿Olvidaste tu contraseña'**
+  String get olvido;
+
+  /// No description provided for @recuperar.
+  ///
+  /// In es, this message translates to:
+  /// **'Recuperar Contraseña'**
+  String get recuperar;
+
+  /// No description provided for @nombreUsuario.
+  ///
+  /// In es, this message translates to:
+  /// **'Nombre de Usuario'**
+  String get nombreUsuario;
+
+  /// No description provided for @cancelar.
+  ///
+  /// In es, this message translates to:
+  /// **'Cancelar'**
+  String get cancelar;
+
+  /// No description provided for @aceptar.
+  ///
+  /// In es, this message translates to:
+  /// **'Aceptar'**
+  String get aceptar;
+
+  /// No description provided for @registros.
+  ///
+  /// In es, this message translates to:
+  /// **'Registros'**
+  String get registros;
+
+  /// No description provided for @trata.
+  ///
+  /// In es, this message translates to:
+  /// **'Tratamiento'**
+  String get trata;
+
+  /// No description provided for @sr.
+  ///
+  /// In es, this message translates to:
+  /// **'Sr.'**
+  String get sr;
+
+  /// No description provided for @sra.
+  ///
+  /// In es, this message translates to:
+  /// **'Sra.'**
+  String get sra;
+
+  /// No description provided for @anadirImagen.
+  ///
+  /// In es, this message translates to:
+  /// **'Añadir Imagen'**
+  String get anadirImagen;
+
+  /// No description provided for @edad.
+  ///
+  /// In es, this message translates to:
+  /// **'Edad'**
+  String get edad;
+
+  /// No description provided for @nacimiento.
+  ///
+  /// In es, this message translates to:
+  /// **'Lugar de nacimiento'**
+  String get nacimiento;
+
+  /// No description provided for @terminos.
+  ///
+  /// In es, this message translates to:
+  /// **'Aceptar términos y condiciones'**
+  String get terminos;
+
+  /// No description provided for @crearUsuario.
+  ///
+  /// In es, this message translates to:
+  /// **'Crear Usuario'**
+  String get crearUsuario;
+
+  /// No description provided for @editarUsuario.
+  ///
+  /// In es, this message translates to:
+  /// **'Editar Usuario'**
+  String get editarUsuario;
+
+  /// No description provided for @compra.
+  ///
+  /// In es, this message translates to:
+  /// **'Compra'**
+  String get compra;
+
+  /// No description provided for @pedido.
+  ///
+  /// In es, this message translates to:
+  /// **'Pedido'**
+  String get pedido;
+
+  /// No description provided for @pedidos.
+  ///
+  /// In es, this message translates to:
+  /// **'Pedidos'**
+  String get pedidos;
+
+  /// No description provided for @yo.
+  ///
+  /// In es, this message translates to:
+  /// **'Yo'**
+  String get yo;
+
+  /// No description provided for @bienvenido.
+  ///
+  /// In es, this message translates to:
+  /// **'Bienvenido'**
+  String get bienvenido;
+
+  /// No description provided for @precio.
+  ///
+  /// In es, this message translates to:
+  /// **'Precio'**
+  String get precio;
+
+  /// No description provided for @realizarCompra.
+  ///
+  /// In es, this message translates to:
+  /// **'Realizar Compra'**
+  String get realizarCompra;
+
+  /// No description provided for @numero.
+  ///
+  /// In es, this message translates to:
+  /// **'Número'**
+  String get numero;
+
+  /// No description provided for @estado.
+  ///
+  /// In es, this message translates to:
+  /// **'Estado'**
+  String get estado;
+
+  /// No description provided for @contacto.
+  ///
+  /// In es, this message translates to:
+  /// **'Contacto'**
+  String get contacto;
+
+  /// No description provided for @contactanos.
+  ///
+  /// In es, this message translates to:
+  /// **'Contactanos'**
+  String get contactanos;
+
+  /// No description provided for @telefono.
+  ///
+  /// In es, this message translates to:
+  /// **'Teléfono'**
+  String get telefono;
+
+  /// No description provided for @web.
+  ///
+  /// In es, this message translates to:
+  /// **'Página Web'**
+  String get web;
+
+  /// No description provided for @ubi.
+  ///
+  /// In es, this message translates to:
+  /// **'Ubicación'**
+  String get ubi;
+
+  /// No description provided for @cambiar.
+  ///
+  /// In es, this message translates to:
+  /// **'Cambiar'**
+  String get cambiar;
+
+  /// No description provided for @nuevo.
+  ///
+  /// In es, this message translates to:
+  /// **'Nuevo'**
+  String get nuevo;
+
+  /// No description provided for @admin.
+  ///
+  /// In es, this message translates to:
+  /// **'Administrador'**
+  String get admin;
+
+  /// No description provided for @productos.
+  ///
+  /// In es, this message translates to:
+  /// **'Productos'**
+  String get productos;
+
+  /// No description provided for @usuarios.
+  ///
+  /// In es, this message translates to:
+  /// **'Usuarios'**
+  String get usuarios;
+
+  /// No description provided for @usuario.
+  ///
+  /// In es, this message translates to:
+  /// **'Usuario'**
+  String get usuario;
+
+  /// No description provided for @borrar.
+  ///
+  /// In es, this message translates to:
+  /// **'Borrar'**
+  String get borrar;
+
+  /// No description provided for @asegurarUsuario.
+  ///
+  /// In es, this message translates to:
+  /// **'¿Estas seguro que quieres borrar este usuario?'**
+  String get asegurarUsuario;
+
+  /// No description provided for @asegurarProducto.
+  ///
+  /// In es, this message translates to:
+  /// **'¿Estas seguro que quieres borrar este producto?'**
+  String get asegurarProducto;
+
+  /// No description provided for @asegurarContrasena.
+  ///
+  /// In es, this message translates to:
+  /// **'Intoduzca su contraseña'**
+  String get asegurarContrasena;
+
+  /// No description provided for @anadirUsuario.
+  ///
+  /// In es, this message translates to:
+  /// **'Añadir Usuario'**
+  String get anadirUsuario;
+
+  /// No description provided for @anadirProducto.
+  ///
+  /// In es, this message translates to:
+  /// **'Añadir Producto'**
+  String get anadirProducto;
+
+  /// No description provided for @producto.
+  ///
+  /// In es, this message translates to:
+  /// **'Producto'**
+  String get producto;
+
+  /// No description provided for @descripcion.
+  ///
+  /// In es, this message translates to:
+  /// **'Descripción'**
+  String get descripcion;
+
+  /// No description provided for @foto.
+  ///
+  /// In es, this message translates to:
+  /// **'Foto'**
+  String get foto;
+
+  /// No description provided for @editarProducto.
+  ///
+  /// In es, this message translates to:
+  /// **'Editar Producto'**
+  String get editarProducto;
+
+  /// No description provided for @editarEstado.
+  ///
+  /// In es, this message translates to:
+  /// **'Editar Estado'**
+  String get editarEstado;
+
+  /// No description provided for @pedidoVerbo.
+  ///
+  /// In es, this message translates to:
+  /// **'Pedido'**
+  String get pedidoVerbo;
+
+  /// No description provided for @produccion.
+  ///
+  /// In es, this message translates to:
+  /// **'En Producción'**
+  String get produccion;
+
+  /// No description provided for @reparto.
+  ///
+  /// In es, this message translates to:
+  /// **'En Reparto'**
+  String get reparto;
+
+  /// No description provided for @entregado.
+  ///
+  /// In es, this message translates to:
+  /// **'Entregado'**
+  String get entregado;
+
+  /// No description provided for @menu.
+  ///
+  /// In es, this message translates to:
+  /// **'Menú'**
+  String get menu;
+
+  /// No description provided for @cerrarSesion.
+  ///
+  /// In es, this message translates to:
+  /// **'Cerrar Sesión'**
+  String get cerrarSesion;
+
+  /// No description provided for @perfil.
+  ///
+  /// In es, this message translates to:
+  /// **'Perfil'**
+  String get perfil;
+
+  /// No description provided for @salir.
+  ///
+  /// In es, this message translates to:
+  /// **'Salir'**
+  String get salir;
 }
 
 class _AppLocalizationsDelegate

@@ -1,5 +1,7 @@
-class Validators{
+import 'package:carloslangac1_2/l10n/app_localizations.dart';
+import 'package:flutter/widgets.dart';
 
+class Validators{
   static String? validarNombre(String? _nombre){
     if(_nombre!.isEmpty || _nombre == null){
       return "Introduce tu nombre";

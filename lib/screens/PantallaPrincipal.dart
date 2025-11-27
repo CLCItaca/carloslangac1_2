@@ -1,5 +1,7 @@
+import 'package:carloslangac1_2/config/utils/Music.dart';
 import 'package:carloslangac1_2/config/utils/Validators.dart';
 import 'package:carloslangac1_2/controllers/user_controller.dart';
+import 'package:carloslangac1_2/l10n/app_localizations.dart';
 import 'package:carloslangac1_2/screens/adminScreens/PantallaSecundariaAdmin.dart';
 import 'package:carloslangac1_2/screens/userScreens/FormularioRegistro.dart';
 import 'package:carloslangac1_2/screens/userScreens/PantallaSecundariaUser.dart';
@@ -22,7 +24,10 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController controller = TextEditingController();
 
-  void _MiPerfil() {
+  void _reproducir() async{
+    await Music.playMusic();
+  }
+  void _MiPerfil(String usuarioBloqueado, String contrasenaError) {
     final _isFormValid = _formKey.currentState!.validate();
     _LogIn = false;
     bool blocked = false;
@@ -38,6 +43,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
             )).then((_) => _formKey.currentState?.reset());
           }
           else{
+            _reproducir();
             Navigator.of(context).push(MaterialPageRoute(
               builder: (BuildContext context) => PantallaSecundariaUser(usuario: _usuario)
             )).then((_) => _formKey.currentState?.reset()); 
@@ -50,12 +56,13 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
       _errorMsg = true;
     }
     if(_errorMsg && !_LogIn){
+      var snackBar = SnackBar(content: Text(''));
       if(blocked){
-        const snackBar = SnackBar(content: Text('Este usuario esta bloqueado'));
+        snackBar = SnackBar(content: Text(usuarioBloqueado));
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
       }
       else{
-        const snackBar = SnackBar(content: Text('Usuario o contraseña incorrectos'));
+        snackBar = SnackBar(content: Text(contrasenaError));
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
       }
       _errorMsg = false;
@@ -70,10 +77,10 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
     ).then((_) => _formKey.currentState?.reset());
   }
                       
-  void _recuperarPass(){
+  void _recuperarPass(String recuperar, String nombreUsuario, String cancelar, String aceptar){
     String? _nombreUser;
     showDialog(context: context, builder: (context) => AlertDialog(
-      title: Text('Recuperar Contraseña'), 
+      title: Text(recuperar), 
       
       content: SingleChildScrollView(
         child: ListBody(
@@ -81,7 +88,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
             TextFormField(
               decoration: InputDecoration(
                 floatingLabelBehavior: FloatingLabelBehavior.always,
-                labelText: "Nombre de Usuario",
+                labelText: nombreUsuario,
                 border: OutlineInputBorder(),
               ),
               onChanged:(value) => _nombreUser = value,
@@ -90,7 +97,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 TextButton(onPressed: () => Navigator.pop(context), 
-                  child: Text('Cancelar')),
+                  child: Text(cancelar)),
                 OutlinedButton(onPressed: () {
                   for(User i in LogicaUsuarios.getListaUser()){
                     if(_nombreUser == i.getNombre()){
@@ -100,7 +107,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
                     }
                   }
                 },
-                  child: Text('Aceptar'))
+                  child: Text(aceptar))
               ],
             )
           ],
@@ -111,11 +118,12 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
   }
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 167, 198, 255),
         title: Text(
-          'Pantalla Principal',
+          l10n.pantallaPrincipal,
           style: TextStyle(color: Colors.black),
         ),
       ),
@@ -135,7 +143,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
                   child: TextFormField(
                     decoration: InputDecoration(
                       floatingLabelBehavior: FloatingLabelBehavior.always,
-                      labelText: "Nombre",
+                      labelText: l10n.nombre,
                       border: OutlineInputBorder(),
                     ),
                     onChanged: (value) {
@@ -154,7 +162,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
                     obscureText: true,
                     decoration: InputDecoration(
                       floatingLabelBehavior: FloatingLabelBehavior.always,
-                      labelText: "Contraseña",
+                      labelText: l10n.contrasena,
                       border: OutlineInputBorder(),
                     ),
                     onChanged: (value) {
@@ -174,12 +182,14 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
                     fixedSize: Size(250, 40),
                     backgroundColor: Color.fromARGB(255, 227, 237, 255),
                   ),
-                  onPressed: _MiPerfil,
+                  onPressed: (){
+                    _MiPerfil(l10n.usuarioBloqueado, l10n.contrasenaError);
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Iniciar Sesión',
+                        l10n.iniciarSesion,
                         style: TextStyle(
                           color: Color.fromARGB(255, 22, 104, 255),
                         ),
@@ -200,7 +210,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Registrarse',
+                        l10n.registrarse,
                         style: TextStyle(
                           color: Color.fromARGB(255, 22, 104, 255),
                         ),
@@ -211,14 +221,24 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
                 SizedBox(height: 10),
                 ElevatedButton(onPressed: () async {
                   final userCredential = await UserController.loginGoogle();
-                  // if (userCredential != null){
-                  //   Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(builder: (context) => PantallaSecundaria(usuario:))
-                  //     );
-                  // }
+                   if (userCredential != null){
+                    User usuarioGoogle = new User(
+                      nombre: UserController.nombre!,
+                      edad: 18,
+                      passwrd: '1234',
+                      trata: 1,
+                      nacimiento: 'España',
+                      active: true,
+                      admin: false,
+                      imgPath: UserController.foto!
+                    );
+                     Navigator.push(
+                       context,
+                       MaterialPageRoute(builder: (context) => PantallaSecundariaUser(usuario: usuarioGoogle))
+                      );
+                  }
                 }, 
-                  child: Text('Acceder con Google')
+                  child: Text(l10n.inicioGoogle)
                 ),
                 SizedBox(height: 10),
                 OutlinedButton(
@@ -226,12 +246,14 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
                     fixedSize: Size(230,40),
                     backgroundColor: Color.fromARGB(255, 227, 237, 255),
                   ),
-                  onPressed: _recuperarPass,
+                  onPressed: (){
+                    _recuperarPass(l10n.recuperar, l10n.nombreUsuario, l10n.cancelar, l10n.aceptar);
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        '¿Olvidaste tu contraseña?',
+                        l10n.olvido,
                         style: TextStyle(
                           color: Color.fromARGB(255, 22, 104, 255)
                         )
