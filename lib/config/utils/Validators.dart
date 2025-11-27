@@ -1,38 +1,35 @@
-import 'package:carloslangac1_2/l10n/app_localizations.dart';
-import 'package:flutter/widgets.dart';
-
 class Validators{
-  static String? validarNombre(String? _nombre){
+  static String? validarNombre(String? _nombre, String mensaje){
     if(_nombre!.isEmpty || _nombre == null){
-      return "Introduce tu nombre";
+      return mensaje;
     }
     return null;
   }
 
-  static String? validarPass(String? _pass){
+  static String? validarPass(String? _pass, String mensaje){
     if(_pass!.isEmpty || _pass == null){
-      return "Introduce una contraseña";
+      return mensaje;
     }
     return null;
   }
 
-  static String? validarPass2(String? _pass, String? _pass2){
+  static String? validarPass2(String? _pass, String? _pass2, String mensaje){
     if(_pass2!.isEmpty || _pass2 == null || _pass2 != _pass){
-      return "Las contraseñas no coinciden";
+      return mensaje;
     }
     return null;
   }
 
-  static String? validarEdad(int? _edad){
+  static String? validarEdad(int? _edad, String mensaje){
     if(_edad == null){
-      return "Introduce una edad";
+      return mensaje;
     }
     return null;
   }
 
-  static String? validarNacimiento(String? _nacimiento){
+  static String? validarNacimiento(String? _nacimiento, String mensaje){
     if(_nacimiento!.isEmpty || _nacimiento == null){
-      return "Introduce lugar de nacimiento";
+      return mensaje;
     }
     return null;
   }

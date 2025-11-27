@@ -1,3 +1,4 @@
+import 'package:carloslangac1_2/config/resources/MyColors.dart';
 import 'package:carloslangac1_2/l10n/app_localizations.dart';
 import 'package:carloslangac1_2/widgets/widgetsAdmin/PagePedidosAdmin.dart';
 import 'package:carloslangac1_2/widgets/widgetsAdmin/PageProductos.dart';
@@ -56,7 +57,7 @@ class _PantallaSecundariaAdminState extends State<PantallaSecundariaAdmin> {
     return Scaffold(
       drawer: DrawerUsuario(onTap: [_pantallaPrincipal,_perfil,_salir],),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 167, 198, 255),
+        backgroundColor: MyColors.bannerColor,
         title: Text(l10n.admin),
       ),
       body: Center(

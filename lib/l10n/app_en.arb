@@ -61,5 +61,10 @@
     "menu": "Menu",
     "cerrarSesion": "Log off",
     "perfil": "User Profile",
-    "salir": "Exit"
+    "salir": "Exit",
+    "errorNombre": "Introduce tu nombre",
+    "errorContrasena": "Introduce una contraseña",
+    "errorMismaContra": "Las contraseñas no coinciden",
+    "errorMensaje": "Introduce una edad",
+    "errorNacimiento": "Introduce lugar de nacimiento"
 }

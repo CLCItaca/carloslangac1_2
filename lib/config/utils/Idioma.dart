@@ -9,8 +9,6 @@ extension IdiomaExtension on Idioma {
         return 'en';
       case Idioma.spanish:
         return 'es';
-      default: 
-        return 'es';
     }
   }
 
@@ -19,8 +17,6 @@ extension IdiomaExtension on Idioma {
       case Idioma.english:
         return 'English';
       case Idioma.spanish:
-        return 'Español';
-      default:
         return 'Español';
     }
   }
@@ -31,8 +27,7 @@ extension IdiomaExtension on Idioma {
         return 'US';
       case Idioma.spanish:
         return 'ES';
-      default:
-        return 'ES';
+
     }
   }
 
@@ -42,8 +37,6 @@ extension IdiomaExtension on Idioma {
         return const Locale('en', "US");
       case Idioma.spanish:
         return const Locale('es', "ES");
-      default:
-        return const Locale('es', "US");
     }
   }
 }

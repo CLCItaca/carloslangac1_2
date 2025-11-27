@@ -61,5 +61,10 @@
     "menu": "Menú",
     "cerrarSesion": "Cerrar Sesión",
     "perfil": "Perfil",
-    "salir": "Salir"
+    "salir": "Salir",
+    "errorNombre": "Write your name",
+    "errorContrasena": "Write a password",
+    "errorMismaContra": "The passwords don't match",
+    "errorMensaje": "Write an age",
+    "errorNacimiento": "Write a Birthplace"
 }

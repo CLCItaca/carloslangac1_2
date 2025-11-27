@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:carloslangac1_2/config/resources/MyColors.dart';
 import 'package:carloslangac1_2/config/utils/Camera.dart';
 import 'package:carloslangac1_2/l10n/app_localizations.dart';
 import 'package:carloslangac1_2/models/Producto.dart';
@@ -18,7 +19,7 @@ class PageProductos extends StatefulWidget {
 
 class _PageProductosState extends State<PageProductos> {
   static List<Producto> todosProductos = LogicaProductos.getListaProductos();
-  @override
+  
   void addProduct() {
     final l10n = AppLocalizations.of(context)!;
     String? nuevoNombre;
@@ -121,6 +122,7 @@ class _PageProductosState extends State<PageProductos> {
       ),
     );
   }
+  @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Container(
@@ -293,7 +295,7 @@ class _PageProductosState extends State<PageProductos> {
 
                 
                 return Card(
-                  color: Color.fromARGB(255, 57, 126, 255),
+                  color: MyColors.boxColor,
                   elevation: 5,
                   shadowColor: Colors.grey,
                   child: Column(
@@ -385,17 +387,17 @@ class _PageProductosState extends State<PageProductos> {
               OutlinedButton(onPressed: addProduct, 
               style: ElevatedButton.styleFrom(
                     fixedSize: Size(250, 40),
-                    backgroundColor: Color.fromARGB(255, 227, 237, 255),
+                    backgroundColor: MyColors.backgroundColor,
               ),
               child: 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.bookmark_rounded, color: Color.fromARGB(255, 22, 104, 255)),
+                    Icon(Icons.bookmark_rounded, color: MyColors.buttonFontColor),
                     Text(
                       l10n.anadirProducto,
                       style: TextStyle(
-                        color: Color.fromARGB(255, 22, 104, 255),
+                        color: MyColors.buttonFontColor,
                       ),
                     )
                   ],

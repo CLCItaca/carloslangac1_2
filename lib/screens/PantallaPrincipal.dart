@@ -1,3 +1,4 @@
+import 'package:carloslangac1_2/config/resources/MyColors.dart';
 import 'package:carloslangac1_2/config/utils/Music.dart';
 import 'package:carloslangac1_2/config/utils/Validators.dart';
 import 'package:carloslangac1_2/controllers/user_controller.dart';
@@ -152,7 +153,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
                     onFieldSubmitted: (value) {
                       controller.clear();
                     },
-                    validator: (value) => Validators.validarNombre(value),
+                    validator: (value) => Validators.validarNombre(value,l10n.errorNombre),
                   ),
                 ),
                 SizedBox(height: 20),
@@ -171,7 +172,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
                     onFieldSubmitted: (value) {
                       controller.clear();
                     },
-                    validator: (value) => Validators.validarPass(value),
+                    validator: (value) => Validators.validarPass(value,l10n.errorContrasena),
                   ),
                 ),
 
@@ -180,7 +181,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
                 OutlinedButton(
                   style: ElevatedButton.styleFrom(
                     fixedSize: Size(250, 40),
-                    backgroundColor: Color.fromARGB(255, 227, 237, 255),
+                    backgroundColor: MyColors.backgroundColor,
                   ),
                   onPressed: (){
                     _MiPerfil(l10n.usuarioBloqueado, l10n.contrasenaError);
@@ -191,7 +192,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
                       Text(
                         l10n.iniciarSesion,
                         style: TextStyle(
-                          color: Color.fromARGB(255, 22, 104, 255),
+                          color: MyColors.buttonFontColor,
                         ),
                       ),
                     ],
@@ -203,7 +204,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
                 OutlinedButton(
                   style: ElevatedButton.styleFrom(
                     fixedSize: Size(250, 40),
-                    backgroundColor: Color.fromARGB(255, 227, 237, 255),
+                    backgroundColor: MyColors.backgroundColor,
                   ),
                   onPressed: _Registro,
                   child: Row(
@@ -212,7 +213,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
                       Text(
                         l10n.registrarse,
                         style: TextStyle(
-                          color: Color.fromARGB(255, 22, 104, 255),
+                          color: MyColors.buttonFontColor,
                         ),
                       ),
                     ],
@@ -244,7 +245,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
                 OutlinedButton(
                   style: ElevatedButton.styleFrom(
                     fixedSize: Size(230,40),
-                    backgroundColor: Color.fromARGB(255, 227, 237, 255),
+                    backgroundColor: MyColors.backgroundColor,
                   ),
                   onPressed: (){
                     _recuperarPass(l10n.recuperar, l10n.nombreUsuario, l10n.cancelar, l10n.aceptar);
@@ -255,7 +256,7 @@ class _PantallaPrincipalState extends State<PantallaPrincipal> {
                       Text(
                         l10n.olvido,
                         style: TextStyle(
-                          color: Color.fromARGB(255, 22, 104, 255)
+                          color: MyColors.buttonFontColor
                         )
                       )
                     ],

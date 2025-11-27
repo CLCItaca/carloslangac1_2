@@ -1,11 +1,10 @@
 import 'dart:io';
 
+import 'package:carloslangac1_2/config/resources/MyColors.dart';
 import 'package:carloslangac1_2/l10n/app_localizations.dart';
 import 'package:carloslangac1_2/models/User.dart';
 import 'package:carloslangac1_2/screens/adminScreens/EditarUsuarioAdmin.dart';
 import 'package:carloslangac1_2/screens/adminScreens/FormularioRegistroAdmin.dart';
-import 'package:carloslangac1_2/screens/userScreens/Contacto.dart';
-import 'package:carloslangac1_2/screens/userScreens/EditarUsuario.dart';
 import 'package:carloslangac1_2/services/LogicaUsuarios.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -92,7 +91,7 @@ class _PageUsuariosState extends State<PageUsuarios> {
                   ));
                 }
                 return Card(
-                  color: Color.fromARGB(82, 199, 199, 199),
+                  color: MyColors.orderBoxColor,
                   elevation: 5,
                   shadowColor: Colors.grey,
                   child: Row(
@@ -175,16 +174,16 @@ class _PageUsuariosState extends State<PageUsuarios> {
               OutlinedButton(onPressed: addUser,
                 style: ElevatedButton.styleFrom(
                   fixedSize: Size(250,40),
-                  backgroundColor: Color.fromARGB(255, 227, 237, 255),
+                  backgroundColor: MyColors.backgroundColor,
                 ), 
                 child: 
                   Row(mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.person_2, color :Color.fromARGB(255, 22, 104, 255)),
+                    Icon(Icons.person_2, color :MyColors.buttonFontColor),
                     Text(
                       l10n.anadirUsuario,
                       style: TextStyle(
-                        color: Color.fromARGB(255, 22, 104, 255)
+                        color: MyColors.buttonFontColor
                       )
                     )
                   ],

@@ -1,5 +1,5 @@
+import 'package:carloslangac1_2/config/resources/MyColors.dart';
 import 'package:carloslangac1_2/l10n/app_localizations.dart';
-import 'package:carloslangac1_2/l10n/app_localizations_en.dart';
 import 'package:flutter/material.dart';
 import 'package:carloslangac1_2/models/User.dart';
 class PerfilUsuario extends StatefulWidget {
@@ -36,10 +36,9 @@ class _PerfilUsuarioState extends State<PerfilUsuario> {
   }
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 167, 198, 255),
+        backgroundColor: MyColors.profileBoxColor,
         title: Text(
           trata(),
           style: TextStyle(color: Colors.black),
@@ -53,7 +52,7 @@ class _PerfilUsuarioState extends State<PerfilUsuario> {
               padding: const EdgeInsets.only(left: 150, right: 150, top: 20),
               child: DecoratedBox(
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 227, 237, 255),
+                  color: MyColors.backgroundColor,
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
                     color: Colors.cyan
@@ -68,7 +67,7 @@ class _PerfilUsuarioState extends State<PerfilUsuario> {
                         Padding(padding: const EdgeInsets.all(10)),
                         Text(
                           Edad(),
-                          style: TextStyle(color: Color.fromARGB(255, 22, 104, 255)),
+                          style: TextStyle(color: MyColors.buttonFontColor),
                         )
                       ],
                     ),
@@ -78,7 +77,7 @@ class _PerfilUsuarioState extends State<PerfilUsuario> {
                         Padding(padding: const EdgeInsets.all(10)),
                         Text(
                           nacimiento(),
-                          style: TextStyle(color: Color.fromARGB(255, 22, 104, 255))
+                          style: TextStyle(color: MyColors.buttonFontColor)
                         ),
                       ],
                     )

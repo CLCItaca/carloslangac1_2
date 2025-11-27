@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:carloslangac1_2/config/resources/MyColors.dart';
 import 'package:carloslangac1_2/l10n/app_localizations.dart';
 import 'package:carloslangac1_2/models/Producto.dart';
 import 'package:carloslangac1_2/models/User.dart';
@@ -65,7 +66,7 @@ class _PageHomeState extends State<PageHome> {
                 }
 
                 return Card(
-                  color: Color.fromARGB(255, 57, 126, 255),
+                  color: MyColors.boxColor,
                   elevation: 5,
                   shadowColor: Colors.grey,
                   child: Column(
@@ -145,11 +146,11 @@ class _PageHomeState extends State<PageHome> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.shopping_cart_checkout_rounded, color: Color.fromARGB(255, 22, 104, 255)),
+                    Icon(Icons.shopping_cart_checkout_rounded, color: MyColors.buttonFontColor),
                     Text(
                       l10n.realizarCompra,
                       style: TextStyle(
-                        color: Color.fromARGB(255, 22, 104, 255),
+                        color: MyColors.buttonFontColor,
                       ),
                     )
                   ],

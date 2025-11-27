@@ -1,3 +1,4 @@
+import 'package:carloslangac1_2/config/resources/MyColors.dart';
 import 'package:carloslangac1_2/l10n/app_localizations.dart';
 import 'package:carloslangac1_2/models/Pedido.dart';
 import 'package:carloslangac1_2/models/User.dart';
@@ -28,7 +29,7 @@ class _PagePedidosState extends State<PagePedidos> {
               itemCount: _listaPedidos.length,
               itemBuilder: (context, index) {
                 return Card(
-                  color: Color.fromARGB(255, 57, 126, 255),
+                  color: MyColors.boxColor,
                   elevation: 5,
                   shadowColor: Colors.grey,
                   child: Column(

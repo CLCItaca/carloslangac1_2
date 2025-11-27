@@ -197,4 +197,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get salir => 'Exit';
+
+  @override
+  String get errorNombre => 'Introduce tu nombre';
+
+  @override
+  String get errorContrasena => 'Introduce una contraseña';
+
+  @override
+  String get errorMismaContra => 'Las contraseñas no coinciden';
+
+  @override
+  String get errorMensaje => 'Introduce una edad';
+
+  @override
+  String get errorNacimiento => 'Introduce lugar de nacimiento';
 }

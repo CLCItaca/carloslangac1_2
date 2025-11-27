@@ -1,3 +1,4 @@
+import 'package:carloslangac1_2/config/resources/MyColors.dart';
 import 'package:carloslangac1_2/config/utils/Music.dart';
 import 'package:carloslangac1_2/l10n/app_localizations.dart';
 import 'package:carloslangac1_2/screens/userScreens/PerfilUsuario.dart';
@@ -76,7 +77,7 @@ class _PantallaSecundariaUserState extends State<PantallaSecundariaUser> {
     return Scaffold(
       drawer: DrawerUsuario(onTap: [_pantallaPrincipal,_perfil,_salir],),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 167, 198, 255),
+        backgroundColor: MyColors.bannerColor,
         title: Text(titulo(l10n.bienvenido,l10n.sr,l10n.sra)),
       ),
       body: Center(

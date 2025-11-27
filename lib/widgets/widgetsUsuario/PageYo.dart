@@ -1,3 +1,4 @@
+import 'package:carloslangac1_2/config/resources/MyColors.dart';
 import 'package:carloslangac1_2/l10n/app_localizations.dart';
 import 'package:carloslangac1_2/models/User.dart';
 import 'package:carloslangac1_2/screens/userScreens/Contacto.dart';
@@ -37,13 +38,13 @@ class _PageYoState extends State<PageYo> {
               OutlinedButton(onPressed: _irAContacto, 
               style: ElevatedButton.styleFrom(
                 fixedSize: Size(250, 40),
-                backgroundColor: Color.fromARGB(255, 227, 237, 255),
+                backgroundColor: MyColors.backgroundColor,
               ),
               child: 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.email, color:Color.fromARGB(255, 22, 104, 255)),
+                    Icon(Icons.email, color:MyColors.buttonFontColor),
                     Text(l10n.contacto)
                   ],
                 ),
@@ -58,13 +59,13 @@ class _PageYoState extends State<PageYo> {
               OutlinedButton(onPressed: _irAPerfil, 
               style: ElevatedButton.styleFrom(
                 fixedSize: Size(250, 40),
-                backgroundColor: Color.fromARGB(255, 227, 237, 255),
+                backgroundColor: MyColors.backgroundColor,
               ),
               child: 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.account_circle, color:Color.fromARGB(255, 22, 104, 255)),
+                    Icon(Icons.account_circle, color:MyColors.buttonFontColor),
                     Text(l10n.editarUsuario)
                   ],
                 ),

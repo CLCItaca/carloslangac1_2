@@ -198,4 +198,19 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get salir => 'Salir';
+
+  @override
+  String get errorNombre => 'Write your name';
+
+  @override
+  String get errorContrasena => 'Write a password';
+
+  @override
+  String get errorMismaContra => 'The passwords don\'t match';
+
+  @override
+  String get errorMensaje => 'Write an age';
+
+  @override
+  String get errorNacimiento => 'Write a Birthplace';
 }

@@ -1,3 +1,4 @@
+import 'package:carloslangac1_2/config/resources/MyColors.dart';
 import 'package:carloslangac1_2/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class _ContactoState extends State<Contacto> {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 167, 198, 255),
+        backgroundColor: MyColors.bannerColor,
         title: Text(l10n.contactanos)
       ),
       body: Center(

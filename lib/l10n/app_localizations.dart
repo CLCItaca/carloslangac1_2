@@ -475,6 +475,36 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Salir'**
   String get salir;
+
+  /// No description provided for @errorNombre.
+  ///
+  /// In es, this message translates to:
+  /// **'Write your name'**
+  String get errorNombre;
+
+  /// No description provided for @errorContrasena.
+  ///
+  /// In es, this message translates to:
+  /// **'Write a password'**
+  String get errorContrasena;
+
+  /// No description provided for @errorMismaContra.
+  ///
+  /// In es, this message translates to:
+  /// **'The passwords don\'t match'**
+  String get errorMismaContra;
+
+  /// No description provided for @errorMensaje.
+  ///
+  /// In es, this message translates to:
+  /// **'Write an age'**
+  String get errorMensaje;
+
+  /// No description provided for @errorNacimiento.
+  ///
+  /// In es, this message translates to:
+  /// **'Write a Birthplace'**
+  String get errorNacimiento;
 }
 
 class _AppLocalizationsDelegate

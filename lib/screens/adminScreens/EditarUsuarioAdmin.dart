@@ -1,6 +1,6 @@
+import 'package:carloslangac1_2/config/resources/MyColors.dart';
 import 'package:carloslangac1_2/l10n/app_localizations.dart';
 import 'package:carloslangac1_2/models/User.dart';
-import 'package:carloslangac1_2/services/LogicaUsuarios.dart';
 import 'package:flutter/material.dart';
 
 class EditarUsuarioAdmin extends StatefulWidget {
@@ -246,7 +246,7 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 167, 198, 255),
+        backgroundColor: MyColors.bannerColor,
         title: Text(l10n.editarUsuario + ' ' + l10n.usuario)
       ),
       body: Center(
@@ -261,7 +261,7 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
                 },
                   style: ElevatedButton.styleFrom(
                     fixedSize: Size(250, 40),
-                    backgroundColor: Color.fromARGB(255, 227, 237, 255),
+                    backgroundColor: MyColors.bannerColor,
                   ),
                   child: 
                     Row(
@@ -282,7 +282,7 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
                 }, 
                   style: ElevatedButton.styleFrom(
                     fixedSize: Size(250, 40),
-                    backgroundColor: Color.fromARGB(255, 227, 237, 255),
+                    backgroundColor: MyColors.backgroundColor,
                   ),
                   child: 
                     Row(
@@ -303,7 +303,7 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
                 }, 
                   style: ElevatedButton.styleFrom(
                     fixedSize: Size(250, 40),
-                    backgroundColor: Color.fromARGB(255, 227, 237, 255),
+                    backgroundColor: MyColors.backgroundColor,
                   ),
                   child: 
                     Row(
@@ -324,7 +324,7 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
                 }, 
                   style: ElevatedButton.styleFrom(
                     fixedSize: Size(250, 40),
-                    backgroundColor: Color.fromARGB(255, 227, 237, 255),
+                    backgroundColor: MyColors.backgroundColor,
                   ),
                   child: 
                     Row(
@@ -345,7 +345,7 @@ class _EditarUsuarioAdminState extends State<EditarUsuarioAdmin> {
                 },
                   style: ElevatedButton.styleFrom(
                     fixedSize: Size(250, 40),
-                    backgroundColor: Color.fromARGB(255, 227, 237, 255),
+                    backgroundColor: MyColors.backgroundColor,
                   ),
                   child: 
                     Row(

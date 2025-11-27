@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:carloslangac1_2/config/resources/MyColors.dart';
 import 'package:carloslangac1_2/config/utils/Validators.dart';
 import 'package:carloslangac1_2/l10n/app_localizations.dart';
 import 'package:flutter/foundation.dart';
@@ -42,7 +43,7 @@ class _FormularioRegistroAdminState extends State<FormularioRegistroAdmin> {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 167, 198, 255),
+        backgroundColor: MyColors.bannerColor,
         title: Text(l10n.registros, style: TextStyle(color: Colors.black))
       ),
       body: SingleChildScrollView(
@@ -109,7 +110,7 @@ class _FormularioRegistroAdminState extends State<FormularioRegistroAdmin> {
                         onChanged: (value) {
                           _nombre = value;
                         },
-                        validator: (value) => Validators.validarNombre(value),
+                        validator: (value) => Validators.validarNombre(value,l10n.errorNombre),
                         
                         )
                         
@@ -130,7 +131,7 @@ class _FormularioRegistroAdminState extends State<FormularioRegistroAdmin> {
                             labelText: l10n.contrasena,
                             border: OutlineInputBorder(),
                           ),
-                          validator: (value) => Validators.validarPass(value),
+                          validator: (value) => Validators.validarPass(value,l10n.errorContrasena),
                           onChanged: (value) {
                             _pass = value;
                           },
@@ -153,7 +154,7 @@ class _FormularioRegistroAdminState extends State<FormularioRegistroAdmin> {
                           labelText: l10n.contrasenaOtra,
                           border: OutlineInputBorder(),
                         ),
-                        validator: (value) => Validators.validarPass2(_pass, value),
+                        validator: (value) => Validators.validarPass2(_pass, value, l10n.errorMismaContra),
                         onChanged: (value) {
                         },
                       ),
@@ -226,7 +227,7 @@ class _FormularioRegistroAdminState extends State<FormularioRegistroAdmin> {
                           labelText: l10n.edad,
                           border: OutlineInputBorder(),
                         ),
-                        validator: (value) => Validators.validarEdad(int.tryParse(value!)),
+                        validator: (value) => Validators.validarEdad(int.tryParse(value!), l10n.errorMensaje),
                         onChanged: (value) {
                           _edad = int.tryParse(value)!;
                         },
@@ -247,7 +248,7 @@ class _FormularioRegistroAdminState extends State<FormularioRegistroAdmin> {
                           labelText: l10n.nacimiento,
                           border: OutlineInputBorder(),
                         ),
-                        validator: (value) => Validators.validarNacimiento(value),
+                        validator: (value) => Validators.validarNacimiento(value,l10n.errorNacimiento),
                         onChanged: (value) {
                           _nacimiento = value;
                         },
@@ -292,14 +293,14 @@ class _FormularioRegistroAdminState extends State<FormularioRegistroAdmin> {
                     OutlinedButton(
                       style: ElevatedButton.styleFrom(
                         fixedSize: Size(250,40),
-                        backgroundColor: Color.fromARGB(255, 227, 237, 255)
+                        backgroundColor: MyColors.backgroundColor
                       ),
                       onPressed: _pantallaPrimaria,
                       child: 
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(l10n.crearUsuario, style: TextStyle(color: Color.fromARGB(255, 22, 104, 255)))
+                            Text(l10n.crearUsuario, style: TextStyle(color: MyColors.buttonFontColor))
                           ],
                         )
                       ),
